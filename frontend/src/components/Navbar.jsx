@@ -1,14 +1,21 @@
-// src/components/Navbar.jsx
+// frontend/src/components/Navbar.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Navbar(){
   return (
-    <nav style={{padding:12, borderBottom:'1px solid #eee'}}>
-      <Link to="/" style={{marginRight:12}}>Home</Link>
-      <Link to="/projects" style={{marginRight:12}}>Projects</Link>
-      <Link to="/about" style={{marginRight:12}}>About</Link>
-      <Link to="/contact">Contact</Link>
-    </nav>
+    <header className="container navbar" style={{borderBottom:'1px solid #eef2ff'}}>
+      <div className="nav-left">
+        <Link to="/" className="brand">Simran Nadaf</Link>
+      </div>
+
+      <nav className="nav-links" aria-label="Main Navigation">
+        <Link to="/">Home</Link>
+        <Link to="/projects">Projects</Link>
+        <Link to="/about">About</Link>
+        <Link to="/contact">Contact</Link>
+        <a className="resume-btn" href="/mnt/data/SimranNadafSD.pdf" target="_blank" rel="noreferrer">Resume</a>
+      </nav>
+    </header>
   );
 }
