@@ -1,10 +1,10 @@
-// frontend/src/components/Footer.jsx
-import React from 'react';
+// Footer.jsx
+import React from "react";
 
-export default function Footer(){
+export default function Footer() {
   return (
     <footer className="footer">
-      © 2025 Simran Nadaf | Made with ❤ using Myrnum
+      <p>© {new Date().getFullYear()} Simran Nadaf — Made with ❤️</p>
     </footer>
   );
 }

@@ -1,20 +1,43 @@
 // frontend/src/components/Navbar.jsx
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-export default function Navbar(){
+export default function Navbar() {
+  const [theme, setTheme] = useState(() => {
+    try {
+      return localStorage.getItem("theme") || "dark";
+    } catch {
+      return "dark";
+    }
+  });
+
+  useEffect(() => {
+    if (theme === "light") document.body.classList.add("light");
+    else document.body.classList.remove("light");
+    try { localStorage.setItem("theme", theme); } catch {}
+  }, [theme]);
+
   return (
-    <header className="container navbar" style={{borderBottom:'1px solid #eef2ff'}}>
-      <div className="nav-left">
-        <Link to="/" className="brand">Simran Nadaf</Link>
-      </div>
-
-      <nav className="nav-links" aria-label="Main Navigation">
+    <header className="navbar" aria-label="Main navigation">
+      <nav className="nav-links">
         <Link to="/">Home</Link>
         <Link to="/projects">Projects</Link>
         <Link to="/about">About</Link>
         <Link to="/contact">Contact</Link>
-        <a className="resume-btn" href="/mnt/data/SimranNadafSD.pdf" target="_blank" rel="noreferrer">Resume</a>
+
+        {/* Make sure resume.pdf exists in frontend/public */}
+        <a href="/resume.pdf" className="resume-btn" target="_blank" rel="noreferrer">
+          Resume
+        </a>
+
+        <button
+          aria-label="Toggle theme"
+          onClick={() => setTheme(t => t === "dark" ? "light" : "dark")}
+          className="theme-toggle"
+          title="Toggle theme"
+        >
+          {theme === "dark" ? "🌙" : "☀️"}
+        </button>
       </nav>
     </header>
   );
