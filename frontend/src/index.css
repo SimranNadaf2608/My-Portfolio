@@ -239,3 +239,150 @@ body{
   color: var(--muted);
   font-size: 0.95rem;
 }
+
+
+
+
+
+/* ====================== PROJECTS PAGE (THEME-AWARE) ====================== */
+/* Paste/replace this block for the Projects page only */
+
+.projects-page {
+  /* local CSS variables (default = dark theme values) */
+  --proj-card-bg: rgba(255,255,255,0.04);
+  --proj-card-border: rgba(255,255,255,0.12);
+  --proj-card-hover: rgba(255,13,187,0.10);
+  --proj-label-bg: rgba(0,0,0,0.20);
+  --proj-label-divider: rgba(255,255,255,0.06);
+  padding-top: 16px;
+  padding-bottom: 48px;
+}
+
+/* LIGHT THEME OVERRIDES */
+body.light .projects-page {
+  --proj-card-bg: #faf3fb;            /* soft/pale background for cards in light theme */
+  --proj-card-border: rgba(20,20,20,0.14); /* strong visible border in light theme */
+  --proj-card-hover: rgba(255,13,187,0.06);
+  --proj-label-bg: rgba(0,0,0,0.06);  /* subtle darker box for label in light theme */
+  --proj-label-divider: rgba(0,0,0,0.06);
+}
+
+/* Header */
+.projects-header h1 { font-size:2.1rem; font-weight:800; margin-bottom:8px; }
+.projects-subtitle { color:var(--muted); font-size:0.98rem; margin-bottom:6px; }
+.projects-description { color:var(--muted); font-size:0.95rem; max-width:760px; margin-bottom:18px; }
+
+.projects-section { margin-top:32px; }
+.projects-section-title { font-size:1.2rem; font-weight:700; margin-bottom:16px; }
+
+/* Featured list */
+.projects-featured-list { display:flex; flex-direction:column; gap:18px; }
+
+/* Project card base: uses local variables for theme */
+.project-card {
+  display:flex;
+  gap:20px;
+  border-radius:14px;
+  padding:18px;
+  background: var(--proj-card-bg);
+  border: 1px solid var(--proj-card-border);
+  transition: transform 200ms ease, background 180ms ease, border-color 160ms ease;
+  cursor: default;
+}
+
+/* Highlighted card keeps its gradient but also uses border var so it's visible in light */
+.project-card--highlight {
+  background: linear-gradient(135deg, rgba(255,13,187,0.18), rgba(255,95,212,0.10));
+  border: 1px solid var(--proj-card-border);
+}
+
+/* Hover: theme-aware */
+.project-card:hover {
+  transform: translateY(-6px);
+  background: var(--proj-card-hover);
+  border-color: var(--accent);
+}
+
+/* Left label box (dark background only for that box) */
+.project-card-left {
+  min-width:170px;
+  max-width:200px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 14px;
+  border-radius:10px;
+  background: var(--proj-label-bg);        /* darkened box for label area */
+  border-right: 1px solid var(--proj-label-divider);
+}
+
+/* Label text */
+.project-label {
+  font-size:0.92rem;
+  font-weight:600;
+  color:var(--text);
+  text-align:center;
+  line-height:1.2;
+}
+
+/* Right side content */
+.project-card-right { flex:1; }
+.project-card-header { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:12px; }
+.project-title { font-size:1.06rem; font-weight:700; margin:0; color:var(--text); }
+.project-badge { font-size:0.78rem; color:var(--muted); }
+
+/* Description spacing */
+.project-desc { font-size:0.95rem; color:var(--muted); margin:12px 0 14px 0; }
+
+/* Tech row and chips */
+.project-tech-row { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; align-items:center; }
+.project-tech-label { font-size:0.9rem; color:var(--muted); margin-right:6px; }
+.project-tech-chips { display:flex; gap:8px; flex-wrap:wrap; }
+.chip {
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:0.8rem;
+  border: 1px solid rgba(0,0,0,0.06);
+  background: rgba(255,255,255,0.02);
+  color: var(--text);
+}
+.chip-tech { font-weight:600; }
+.chip-tag { margin-top:4px; font-size:0.82rem; }
+
+/* Tags row */
+.project-tags-row { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px; }
+
+/* Links/buttons row */
+.project-links-row { display:flex; gap:12px; align-items:center; }
+.btn-small { padding:8px 12px; border-radius:8px; font-size:0.87rem; text-decoration:none; display:inline-flex; align-items:center; gap:8px; }
+.btn-small-primary { background: linear-gradient(180deg,var(--accent),var(--accent-2)); color:var(--resume-text); border:1px solid rgba(0,0,0,0.04); }
+.btn-small-vercel { background:transparent; color:var(--text); border:1px solid rgba(0,0,0,0.10); font-weight:600; }
+.btn-small-ghost { background:transparent; color:var(--text); border:1px solid rgba(0,0,0,0.08); }
+.project-coming-soon { font-size:0.85rem; color:var(--muted); }
+
+/* Other projects grid & cards also use same vars */
+.projects-other-grid { margin-top:18px; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+.other-project-card {
+  border-radius:12px;
+  padding:14px;
+  background: var(--proj-card-bg);
+  border: 1px solid var(--proj-card-border);
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+.other-project-card:hover { transform: translateY(-4px); background: var(--proj-card-hover); border-color:var(--accent); }
+
+.other-project-card h3 { font-size:0.98rem; margin-bottom:6px; color:var(--text); }
+.other-project-desc { font-size:0.86rem; color:var(--muted); margin-bottom:8px; }
+.other-project-tech { font-size:0.8rem; color:var(--muted); margin-bottom:8px; }
+.other-project-link { padding:8px 12px; border-radius:999px; border:1px solid var(--proj-card-border); background:transparent; color:var(--text); }
+
+/* Responsive tweaks */
+@media (max-width:900px){
+  .project-card { flex-direction:column; padding:14px; }
+  .project-card-left {
+    min-width:auto; max-width:none; width:100%;
+    border-right:none; border-bottom:1px solid var(--proj-label-divider);
+    padding-bottom:12px; margin-bottom:10px;
+  }
+  .projects-other-grid { grid-template-columns:1fr; }
+}
