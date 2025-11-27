@@ -60,7 +60,7 @@ body{
   justify-content: flex-end;
   align-items: center;
 
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 50;
 
@@ -383,4 +383,298 @@ body.light .projects-page {
     padding-bottom:12px; margin-bottom:10px;
   }
   .projects-other-grid { grid-template-columns:1fr; }
+}
+
+
+
+
+
+
+/* ================= ABOUT PAGE (updated) ================= */
+/* Outer sections (Skills, Certifications, Goals) won't get pink hover.
+   Inner cards still have hover + pink accent.
+   Includes clear light-theme borders/backgrounds. */
+
+.about-page { padding-bottom: 56px; }
+
+/* Grid layout: left content + right sidebar */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 34px;
+  align-items: start;
+}
+
+/* make lower sections span full width */
+.about-full { grid-column: 1 / -1; }
+
+/* ---------------- THEME OVERRIDES (light theme stronger borders) ---------------- */
+body.light {
+  /* ensure outer full sections have visible bg/border in light theme */
+  --about-outer-bg: #faf7fb;            /* soft pastel background */
+  --about-outer-border: rgba(20,20,20,0.14); /* stronger border for light */
+  --about-inner-bg: #ffffff;            /* inner card background if needed */
+  --about-inner-border: rgba(20,20,20,0.08);
+}
+
+/* Fallback (dark theme) */
+:root {
+  --about-outer-bg: var(--card-bg, rgba(255,255,255,0.02));
+  --about-outer-border: var(--card-border, rgba(255,255,255,0.06));
+  --about-inner-bg: rgba(255,255,255,0.01);
+  --about-inner-border: rgba(255,255,255,0.04);
+  --about-outer-hover: rgba(255,13,187,0.06); /* subtle for dark */
+}
+
+/* ---------------- Base text / left column ---------------- */
+.about-left { min-width: 0; }
+
+.about-title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+.about-lead { color: var(--muted); margin-bottom: 12px; font-size: 1rem; }
+
+.about-tags { display:flex; gap:8px; margin-bottom:14px; flex-wrap:wrap; }
+.tag {
+  padding:6px 10px; border-radius:999px;
+  background: linear-gradient(180deg,var(--accent),var(--accent-2));
+  color: var(--resume-text); font-weight:600; font-size:0.85rem;
+}
+
+.about-bio p { margin-bottom:12px; color:var(--muted); line-height:1.6; }
+
+/* ---------------- OUTER SECTION STYLING (NO PINK HOVER) ---------------- */
+/* Outer full-width sections (the large containers) */
+.about-full {
+  background: var(--about-outer-bg);
+  border: 1px solid var(--about-outer-border);
+  border-radius: 12px;
+  padding: 18px;
+  transition: none; /* disable transform transition for outer container */
+}
+
+/* explicitly remove hover transform / pink border for outer full containers */
+.about-full:hover {
+  transform: none !important;
+  background: var(--about-outer-bg) !important;
+  border-color: var(--about-outer-border) !important;
+  box-shadow: none !important;
+}
+
+/* keep standard spacing for smaller .card-section when not full */
+.card-section { margin-top: 26px; }
+
+/* section titles */
+.section-title { color: var(--accent); margin-bottom:6px; font-weight:700; }
+.section-sub { color:var(--muted); margin-bottom:12px; font-size:0.92rem; }
+
+/* ---------------- INNER CARDS (retain Projects-style border + hover) ---------------- */
+
+/* universal-card-inner = the small interactive cards inside outer containers */
+.universal-card-inner {
+  background: var(--about-inner-bg);
+  border: 1px solid var(--about-inner-border);
+  border-radius: 10px;
+  padding: 12px;
+  transition: transform 180ms ease, background 160ms ease, border-color 160ms ease;
+}
+.universal-card-inner:hover {
+  transform: translateY(-4px);
+  background: rgba(255,13,187,0.06);
+  border-color: var(--accent);
+}
+
+/* Small skill/tech chips */
+.skill-chip {
+  padding:6px 10px; border-radius:999px;
+  background: rgba(255,255,255,0.02);
+  border:1px solid rgba(255,255,255,0.04);
+  color: var(--text); font-size:0.85rem;
+}
+
+/* ---------------- SKILLS (outer is about-full; inner keep hover) ---------------- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+/* skill-box will be inner boxes — ensure they use universal-card-inner */
+.skill-box { border-radius: 12px; }
+.skill-box .universal-card-inner { /* nothing needed, kept for clarity */ }
+
+/* skill text */
+.skill-box h4 { margin:0 0 8px 0; color:var(--text); }
+.skill-row { display:flex; gap:10px; flex-wrap:wrap; }
+
+/* ---------------- CERTIFICATIONS (outer is about-full; inner keep hover) ---------------- */
+.cert-grid {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 12px;
+}
+.cert-card { border-radius:10px; }
+.cert-card .universal-card-inner { /* keep inner card styling */ }
+
+/* certification text */
+.cert-card strong { display:block; margin-bottom:6px; color:var(--text); }
+.cert-desc { color:var(--muted); font-size:0.9rem; }
+
+/* ---------------- GOAL CARD (outer about-full, so no pink hover) ---------------- */
+.goal-card { border-radius:10px; padding: 16px; color:var(--muted); line-height:1.6; }
+
+/* ---------------- SIDEBAR (profile + snapshot) keep hover + borders) ---------------- */
+.about-right { display:flex; flex-direction:column; gap:16px; }
+
+/* profile card - keep interactive look (inner) */
+.profile-card {
+  background: var(--about-inner-bg);
+  border: 1px solid var(--about-inner-border);
+  border-radius: 10px;
+  padding: 12px;
+  display:flex;
+  gap:12px;
+  align-items:center;
+  transition: transform 200ms ease, background 160ms ease, border-color 160ms ease;
+}
+.profile-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255,13,187,0.06);
+  border-color: var(--accent);
+}
+
+/* avatar */
+.avatar-placeholder {
+  width:64px; height:64px; border-radius:999px;
+  display:flex; align-items:center; justify-content:center;
+  background: linear-gradient(180deg,var(--accent),var(--accent-2));
+  color:var(--resume-text); font-weight:800; font-size:20px;
+}
+.profile-info h4 { margin:0; color:var(--text); }
+.profile-info .muted { color:var(--muted); margin:6px 0; }
+
+/* small tags - keep border visible in light theme too */
+.small-tag {
+  padding:6px 8px; border-radius:999px;
+  background: rgba(255,255,255,0.03);
+  border:1px solid var(--about-inner-border);
+  color:var(--text); font-size:0.78rem;
+}
+
+/* snapshot card - interactive inner card */
+.snapshot-card {
+  background: var(--about-inner-bg);
+  border: 1px solid var(--about-inner-border);
+  border-radius: 10px;
+  padding: 12px;
+  transition: transform 200ms ease, background 160ms ease, border-color 160ms ease;
+}
+.snapshot-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255,13,187,0.06);
+  border-color: var(--accent);
+}
+.snapshot-card h4 { margin:0 0 8px 0; color:var(--text); }
+.snapshot-row { display:flex; justify-content:space-between; gap:12px; padding:8px 0; border-top:1px solid rgba(255,255,255,0.02); }
+.snapshot-row:first-of-type { border-top:none; padding-top:0; }
+.snapshot-key { color:var(--muted); font-size:0.9rem; }
+.snapshot-val { color:var(--text); font-weight:600; text-align:right; }
+
+/* ---------------- Responsive adjustments ---------------- */
+@media (max-width: 1000px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .about-right { order: 2; }
+  .about-left { order: 1; }
+  .skills-grid, .cert-grid { grid-template-columns: 1fr; }
+}
+
+
+
+
+
+
+/* ================= CONTACT CARDS PAGE (no pink hover; light borders) ================= */
+
+.contact-cards-page { padding-bottom: 80px; }
+
+/* header */
+.contact-header { margin-bottom: 18px; }
+.contact-header h1 { font-size: 1.9rem; margin-bottom: 6px; color:var(--text); }
+.contact-sub { color:var(--muted); margin-bottom: 18px; }
+
+/* grid: cards two columns */
+.contact-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* each contact card */
+.contact-card {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 18px;
+  border-radius: 10px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+/* light-theme overrides for visible borders & backgrounds */
+body.light .contact-card {
+  background: #fff;                     /* white card body in light mode */
+  border: 1px solid rgba(20,20,20,0.10); /* stronger visible border in light */
+}
+
+/* subtle neutral hover (NOT pink) */
+.contact-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255,255,255,0.02);
+  border-color: rgba(255,255,255,0.04);
+}
+body.light .contact-card:hover {
+  background: rgba(0,0,0,0.03);
+  border-color: rgba(20,20,20,0.14);
+}
+
+/* left icon box */
+.contact-card-left {
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.01);
+  border: 1px solid rgba(255,255,255,0.02);
+}
+body.light .contact-card-left {
+  background: rgba(0,0,0,0.02);
+  border: 1px solid rgba(20,20,20,0.06);
+}
+
+/* icon color */
+.contact-icon { color: var(--muted); display:inline-flex; }
+
+/* right content */
+.contact-card-title { font-size: 0.92rem; color: var(--muted); margin-bottom: 6px; }
+.contact-card-value { font-weight: 600; color: var(--text); text-decoration:none; display:block; }
+
+/* layout tweak for location-only cards (span full width) */
+.contact-card.full {
+  grid-column: 1 / -1;
+}
+
+/* responsive */
+@media (max-width: 880px) {
+  .contact-cards-grid { grid-template-columns: 1fr; padding: 0 12px; }
 }
