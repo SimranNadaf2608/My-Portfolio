@@ -55,7 +55,7 @@ body{
 /* ------------------------------------------------ */
 .navbar {
   width: 100%;
-  padding: 14px 36px;
+  padding:8px 36px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -64,15 +64,22 @@ body{
   top: 0;
   z-index: 50;
 
-  /* Remove ALL background & blur */
-  background: transparent !important;
+  /* Add simple background */
+  background: var(--panel);  /* works for dark & light theme */
+  
+  /* No blur */
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
 
-  /* Remove any borders/shadows */
-  border: none !important;
+  /* Add clean bottom border (visible in both themes) */
+  border-bottom: 1px solid var(--card-border);
+
+  /* No shadow */
   box-shadow: none !important;
+
+  transition: background 200ms ease, border-color 200ms ease;
 }
+
 
 .nav-links{
   display:flex;
@@ -252,7 +259,7 @@ body{
   --proj-card-hover: rgba(255,13,187,0.10);
   --proj-label-bg: rgba(0,0,0,0.20);
   --proj-label-divider: rgba(255,255,255,0.06);
-  padding-top: 16px;
+  padding-top: 60px;
   padding-bottom: 48px;
 }
 
@@ -396,6 +403,8 @@ body.light .projects-page {
    Includes clear light-theme borders/backgrounds. */
 
 .about-page { padding-bottom: 56px; }
+.about-page { padding-top: 60px; }
+
 
 /* Grid layout: left content + right sidebar */
 .about-grid {
@@ -601,10 +610,11 @@ body.light {
 /* ================= CONTACT CARDS PAGE (no pink hover; light borders) ================= */
 
 .contact-cards-page { padding-bottom: 80px; }
+.contact-cards-page { padding-top: 60px; }
 
 /* header */
 .contact-header { margin-bottom: 18px; }
-.contact-header h1 { font-size: 1.9rem; margin-bottom: 6px; color:var(--text); }
+.contact-header h1 { font-size: 1.9rem; margin-bottom: 6px; color:var(--text); font-weight: 900;}
 .contact-sub { color:var(--muted); margin-bottom: 18px; }
 
 /* grid: cards two columns */
