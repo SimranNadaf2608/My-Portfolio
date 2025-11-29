@@ -3,62 +3,21 @@ import React from "react";
 
 const featuredProjects = [
   {
-    id: "shopnest",
-    labelLine1: "ShopNest — E-Commerce UI",
-    title: "ShopNest (E-Commerce Frontend)",
-    badge: "Modern storefront experience",
+    id: "Geo",
+    labelLine1: "Geo-Poverty-Analyzer",
+    title: "GeoPovertyAnalyzer",
+    badge: "Modern fullstack experience",
     description:
-      "A responsive e-commerce frontend with product browsing, filtered search, cart management, and checkout flow. Focused on fast navigation, clean product presentation, and a smooth buying journey.",
-    tech: ["React", "MUI", "JavaScript", "REST APIs"],
+      "A geospatial tool that maps poverty levels to support targeted community development.",
+    tech: ["Python", "React", "AIML", "REST APIs"],
     tags: [
-      "Product listing & detail pages",
-      "Filter & sort products",
-      "Persistent shopping cart",
-      "Responsive layout"
+      "Data collection & cleaning",
+      "Data analysis & visualization",
+      "future predictions using ML",
+      "Results dashboard"
     ],
-    github: "https://github.com/SimranNadaf2608/Recipe-App.git",
-    demo: "",
-    vercel: "https://shopnest.vercel.app"
-  },
-  {
-    id: "focusflow",
-    labelLine1: "FocusFlow — Productivity Timer",
-    title: "FocusFlow (Productivity Timer App)",
-    badge: "Deep work & break cycles",
-    description:
-      "A minimal timer app built around focused work sessions and structured breaks. Designed to reduce distractions, track completed cycles, and help build consistent study or work habits.",
-    tech: ["React", "TypeScript", "Styled Components"],
-    tags: ["Custom session lengths", "Session statistics", "Audio alerts", "Distraction-free UI"],
-    github: "",
-    demo: "",
-    vercel: ""
-  },
-  {
-    id: "student-mgmt",
-    labelLine1: "Java Student Management System",
-    title: "Java Student Management System",
-    badge: "Console-driven backend logic",
-    description:
-      "A Java console application to manage student records, including creation, updates, search, and reporting. Emphasizes clean object-oriented design, input validation, and data persistence.",
-    tech: ["Java", "OOP", "Collections"],
-    tags: ["Add / update / delete students", "Search by ID & name", "Basic reporting", "Menu-based console UI"],
-    github: "https://github.com/yourusername/java-student-mgmt",
-    demo: "",
-    vercel: ""
-  },
-  {
-    id: "weather-app",
-    labelLine1: "Weather App — Live Forecasts",
-    title: "Weather App",
-    badge: "Clean real-time weather overview",
-    description:
-      "A weather dashboard that shows current conditions and multi-day forecasts for any city. Built around quick search, meaningful weather details, and a simple, uncluttered design.",
-    tech: ["React", "JavaScript", "OpenWeather API", "CSS Modules"],
-    tags: ["City search with suggestions", "Current & 5-day forecast", "Temperature & humidity", "Condition-based icons"],
-    github: "",
-    demo: "",
-    vercel: "https://weather-demo.vercel.app",
-    highlight: true
+    github: "https://github.com/SimranNadaf2608/GeoPovertyAnalyzer.git",
+    vercel: "https://recipe-kohl-zeta.vercel.app/"
   }
 ];
 
@@ -71,40 +30,20 @@ const otherProjects = [
     github: "https://github.com/SimranNadaf2608/My-Portfolio"
   },
   {
-    id: "todo",
-    title: "Todo App",
-    description: "Task manager with add, edit, delete, and completion states.",
+    id: "Recipe",
+    title: "Recipe - App",
+    description: "Built features for recipe sharing, ingredients, instructions.",
     tech: "React, JavaScript, localStorage",
-    github: "https://github.com/SimranNadaf2608/Todo-App"
+    github: "https://github.com/SimranNadaf2608/Recipe-App.git"
   },
   {
-    id: "calculator",
-    title: "Calculator App",
-    description: "Basic calculator for everyday operations with keyboard support.",
-    tech: "HTML, CSS, JavaScript",
-    github: "https://github.com/SimranNadaf2608/Calculator"
+    id: "Portal",
+    title: "Complaint Management Portal",
+    description: "It allows students to submit, view, and delete complaints through a user-friendly web interface. ",
+    tech: "S, Java, pring Boot, MySQL",
+    github: "https://github.com/SimranNadaf2608/Complaint-Management-Portal-.git"
   },
-  {
-    id: "password",
-    title: "Password Generator",
-    description: "Generates strong, customizable passwords with copy support.",
-    tech: "JavaScript, DOM APIs",
-    github: "https://github.com/SimranNadaf2608/Password-Generator"
-  },
-  {
-    id: "login-form",
-    title: "Login Form UI",
-    description: "Modern, responsive login page with subtle validation states.",
-    tech: "HTML, CSS, responsive layout",
-    github: "https://github.com/SimranNadaf2608/Login-Form"
-  },
-  {
-    id: "notes",
-    title: "Notes App",
-    description: "Lightweight note-taking app for quick ideas and to-dos.",
-    tech: "React, LocalStorage",
-    github: "https://github.com/SimranNadaf2608/Notes-App"
-  }
+  
 ];
 
 
