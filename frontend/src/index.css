@@ -541,7 +541,25 @@ body.light .projects-page {
 .other-project-card h3 { font-size:0.98rem; margin-bottom:6px; color:var(--text); }
 .other-project-desc { font-size:0.86rem; color:var(--muted); margin-bottom:8px; }
 .other-project-tech { font-size:0.8rem; color:var(--muted); margin-bottom:8px; }
-.other-project-link { padding:8px 12px; border-radius:999px; border:1px solid var(--proj-card-border); background:transparent; color:var(--text); }
+.other-project-link {
+  display: inline-block;
+  padding: 6px 12px;                 /* smaller size */
+  font-size: 0.85rem;                /* smaller text */
+  border-radius: 8px;                /* smooth corners */
+  background: transparent;
+  border: 1px solid var(--accent);   /* keep border (optional) */
+  color: var(--accent);
+  text-decoration: none !important;  /* REMOVE underline */
+  transition: 0.2s ease;
+}
+
+/* Hover effect */
+.other-project-link:hover {
+  background: var(--accent);
+  color: var(--resume-text);         /* light text inside pink background */
+  transform: translateY(-2px);
+}
+
 
 /* Responsive tweaks */
 @media (max-width:900px){

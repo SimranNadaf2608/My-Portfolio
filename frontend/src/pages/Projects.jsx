@@ -16,7 +16,7 @@ const featuredProjects = [
       "Persistent shopping cart",
       "Responsive layout"
     ],
-    github: "https://github.com/yourusername/shopnest",
+    github: "https://github.com/SimranNadaf2608/Recipe-App.git",
     demo: "",
     vercel: "https://shopnest.vercel.app"
   },
@@ -63,13 +63,50 @@ const featuredProjects = [
 ];
 
 const otherProjects = [
-  { id: "portfolio", title: "Portfolio Website", description: "Personal portfolio showcasing projects, skills, and contact details.", tech: "React, JavaScript, CSS", linkLabel: "View details" },
-  { id: "todo", title: "Todo App", description: "Task manager with add, edit, delete, and completion states.", tech: "React, JavaScript, localStorage", linkLabel: "Code" },
-  { id: "calculator", title: "Calculator App", description: "Basic calculator for everyday operations with keyboard support.", tech: "HTML, CSS, JavaScript", linkLabel: "Code" },
-  { id: "password", title: "Password Generator", description: "Generates strong, customizable passwords with copy support.", tech: "JavaScript, DOM APIs", linkLabel: "View details" },
-  { id: "login-form", title: "Login Form UI", description: "Modern, responsive login page with subtle validation states.", tech: "HTML, CSS, responsive layout", linkLabel: "Code" },
-  { id: "notes", title: "Notes App", description: "Lightweight note-taking app for quick ideas and to-dos.", tech: "React, LocalStorage", linkLabel: "View details" }
+  {
+    id: "portfolio",
+    title: "Portfolio Website",
+    description: "Personal portfolio showcasing projects, skills, and contact details.",
+    tech: "React, JavaScript, CSS",
+    github: "https://github.com/SimranNadaf2608/My-Portfolio"
+  },
+  {
+    id: "todo",
+    title: "Todo App",
+    description: "Task manager with add, edit, delete, and completion states.",
+    tech: "React, JavaScript, localStorage",
+    github: "https://github.com/SimranNadaf2608/Todo-App"
+  },
+  {
+    id: "calculator",
+    title: "Calculator App",
+    description: "Basic calculator for everyday operations with keyboard support.",
+    tech: "HTML, CSS, JavaScript",
+    github: "https://github.com/SimranNadaf2608/Calculator"
+  },
+  {
+    id: "password",
+    title: "Password Generator",
+    description: "Generates strong, customizable passwords with copy support.",
+    tech: "JavaScript, DOM APIs",
+    github: "https://github.com/SimranNadaf2608/Password-Generator"
+  },
+  {
+    id: "login-form",
+    title: "Login Form UI",
+    description: "Modern, responsive login page with subtle validation states.",
+    tech: "HTML, CSS, responsive layout",
+    github: "https://github.com/SimranNadaf2608/Login-Form"
+  },
+  {
+    id: "notes",
+    title: "Notes App",
+    description: "Lightweight note-taking app for quick ideas and to-dos.",
+    tech: "React, LocalStorage",
+    github: "https://github.com/SimranNadaf2608/Notes-App"
+  }
 ];
+
 
 export default function Projects() {
   return (
@@ -143,22 +180,35 @@ export default function Projects() {
 
       {/* Other projects */}
       <section className="projects-section">
-        <h2 className="projects-section-title">Other Projects</h2>
-        <div className="projects-other-grid">
-          {otherProjects.map(p => (
-            <article key={p.id} className="other-project-card">
-              <h3>{p.title}</h3>
-              <p className="other-project-desc">{p.description}</p>
-              <p className="other-project-tech">{p.tech}</p>
-              <button className="other-project-link">{p.linkLabel}</button>
-            </article>
-          ))}
-        </div>
-          <br />
-        <p className="projects-note">
-          I consistently build new projects to improve my skills and learn new technologies. More projects coming soon!
-        </p>
-      </section>
+                  <h2 className="projects-section-title">Other Projects</h2>
+
+                  <div className="projects-other-grid">
+                    {otherProjects.map(p => (
+                      <article key={p.id} className="other-project-card">
+                        <h3>{p.title}</h3>
+                        <p className="other-project-desc">{p.description}</p>
+                        <p className="other-project-tech">{p.tech}</p>
+
+                        <a
+                          href={p.github}
+                          className="other-project-link"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          GitHub
+                        </a>
+                      </article>
+                    ))}
+                  </div>
+
+                  <br />
+
+                  <p className="projects-note">
+                    I consistently build new projects to improve my skills and learn new technologies.
+                    More projects coming soon!
+                  </p>
+        </section>
+
     </div>
   );
 }
