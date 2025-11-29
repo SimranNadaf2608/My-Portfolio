@@ -46,17 +46,17 @@ function IconLocation() {
 
 export default function Contact() {
   const items = [
-    { id: 1, icon: <IconEmail />, title: "Email", value: "simrannadafXXXX@gmail.com", href: "mailto:simrannadafXXXX@gmail.com" },
-    { id: 2, icon: <IconLinkedIn />, title: "LinkedIn", value: "linkedin.com/in/yourprofile", href: "https://linkedin.com/in/yourprofile" },
-    { id: 3, icon: <IconGitHub />, title: "GitHub", value: "github.com/yourusername", href: "https://github.com/yourusername" },
-    { id: 4, icon: <IconResume />, title: "Resume", value: "Link to your resume (Google Drive / Myrnum)", href: "/resume.pdf" },
+    { id: 1, icon: <IconEmail />, title: "Email", value: "simrannadaf2608@gmail.com", href: "mailto:simrannadaf2608@gmail.com" },
+    { id: 2, icon: <IconLinkedIn />, title: "LinkedIn", value: "linkedin.com/in/simrannadaf2608", href: "https://www.linkedin.com/in/simrannadaf2608" },
+    { id: 3, icon: <IconGitHub />, title: "GitHub", value: "github.com/SimranNadaf26", href: "https://github.com/SimranNadaf26" },
+    { id: 4, icon: <IconResume />, title: "Resume", value: "Link to my resume", href: "/resume.pdf" },
     { id: 5, icon: <IconLocation />, title: "Location", value: "Karnataka, India" }
   ];
 
   return (
     <main className="container contact-cards-page">
       <header className="contact-header">
-        <h1>Contact details</h1>
+        <h1>Contact Details</h1>
         <p className="contact-sub">Find me on these platforms or reach out directly.</p>
       </header>
 

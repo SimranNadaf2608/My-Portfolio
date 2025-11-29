@@ -103,6 +103,136 @@ body{
   transform:translateY(-2px);
 }
 
+
+
+
+/* =========================
+   MOBILE NAVBAR FIX (ONLY index.css)
+   Paste this AFTER your existing navbar rules
+   ========================= */
+
+/* navbar height used for spacing */
+:root { --navbar-height: 64px; }
+
+/* ensure page content isn't hidden behind fixed navbar */
+body {
+  padding-top: var(--navbar-height);
+}
+
+/* ---------- HAMBURGER BUTTON (hidden on desktop, visible on mobile) ---------- */
+.nav-toggle {
+  display: none;               /* desktop default */
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* three bars */
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 3px;
+  margin: 3px 0;
+  border-radius: 3px;
+  background: var(--muted);
+  transition: transform .18s ease, opacity .18s ease;
+}
+
+/* toggle -> cross (when .open class added to button) */
+.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; transform: scale(0); }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ---------- MOBILE MENU PANEL (hidden by default) ---------- */
+/* On small screens hide the default nav-links and show them only when .open is present.
+   Uses !important for display to override any earlier rules that hid it. */
+@media (max-width: 900px) {
+  /* ensure desktop horizontal nav is hidden on mobile */
+  .nav-links { display: none !important; }
+
+  /* show hamburger */
+  .nav-toggle { display: inline-flex; }
+
+  /* the open state: show a compact panel positioned under navbar */
+  .nav-links.open {
+    display: flex !important;
+    position: fixed;
+    top: calc(var(--navbar-height) + 10px);
+    right: 12px;
+    z-index: 1400; /* above most elements */
+    min-width: 170px;
+    max-width: calc(100% - 32px);
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+    border-radius: 10px;
+
+    /* panel visual (theme-aware) */
+    background: var(--panel);
+    border: 1px solid var(--card-border);
+    box-shadow: none;
+  }
+
+  /* mobile menu link styles (full-width tappable) */
+  .nav-links.open .nav-link,
+  .nav-links.open a,
+  .nav-links.open .resume-btn {
+    display: block;
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    color: var(--muted);
+    text-decoration: none;
+    text-align: left;
+  }
+
+  /* ensure resume button still looks like a button but fills width */
+  .nav-links.open .resume-btn {
+    display: block;
+    text-align: center;
+    margin-top: 4px;
+  }
+
+  /* when mobile menu open, slightly darken hovered link for affordance (no pink) */
+  .nav-links.open .nav-link:hover,
+  .nav-links.open a:hover,
+  .nav-links.open .resume-btn:hover {
+    background: rgba(255,255,255,0.03);
+    color: var(--text);
+    transform: none;
+  }
+}
+
+/* ---------- SAFETY: if some other rule has set nav-links to display:none with higher specificity,
+   allow this to override by making a specific selector when .open is present ---------- */
+@media (max-width: 900px) {
+  nav .nav-links.open,
+  .navbar .nav-links.open {
+    display: flex !important;
+  }
+}
+
+/* ---------- Prevent menu being cut off on very small screens ---------- */
+@media (max-width: 420px) {
+  .nav-links.open {
+    right: 8px;
+    left: 8px;
+    min-width: auto;
+    max-width: calc(100% - 16px);
+  }
+}
+
+/* ---------- Accessibility: focusable items inside mobile panel get clear outline ---------- */
+.nav-links.open .nav-link:focus,
+.nav-links.open .resume-btn:focus {
+  outline: 3px solid rgba(255,255,255,0.06);
+  outline-offset: 3px;
+}
+
+
 /* Resume button */
 .resume-btn{
   background: linear-gradient(180deg,var(--accent), var(--accent-2));
@@ -218,6 +348,38 @@ body{
   background:rgba(255,13,187,0.07);
   border-color:var(--accent);
 }
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media (max-width: 600px) {
+  .quick-contacts {
+    gap: 10px;
+    padding: 0 10px;
+  }
+
+  .icon-btn {
+    padding: 9px 14px;          /* slightly smaller buttons for mobile */
+    font-size: 0.9rem;
+    flex: 1 1 45%;              /* fit two buttons per row if 3+ buttons exist */
+    text-align: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .quick-contacts {
+    gap: 8px;
+    padding: 0 8px;
+  }
+
+  .icon-btn {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    flex: 1 1 100%;             /* one button per row on very small phones */
+  }
+}
+
+
+
 
 /* Typing Cursor */
 .typing{
@@ -596,11 +758,32 @@ body.light {
 
 /* ---------------- Responsive adjustments ---------------- */
 @media (max-width: 1000px) {
-  .about-grid { grid-template-columns: 1fr; }
-  .about-right { order: 2; }
-  .about-left { order: 1; }
-  .skills-grid, .cert-grid { grid-template-columns: 1fr; }
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* 1. show sidebar first: Simran Nadaf + Quick Snapshot */
+  .about-right {
+    order: 1;
+  }
+
+  /* 2. then main "Who I am" content */
+  .about-left {
+    order: 2;
+  }
+
+  /* 3. then Skills, Certifications, Goals (outer full sections) */
+  .about-full {
+    order: 3;
+  }
+
+  /* still keep single-column grids for inner sections */
+  .skills-grid,
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
 }
+
 
 
 
@@ -609,13 +792,20 @@ body.light {
 
 /* ================= CONTACT CARDS PAGE (no pink hover; light borders) ================= */
 
-.contact-cards-page { padding-bottom: 80px; }
-.contact-cards-page { padding-top: 60px; }
+.contact-cards-page {
+  padding-bottom: 80px;
+  padding-top: 60px;
+}
 
 /* header */
 .contact-header { margin-bottom: 18px; }
-.contact-header h1 { font-size: 1.9rem; margin-bottom: 6px; color:var(--text); font-weight: 900;}
-.contact-sub { color:var(--muted); margin-bottom: 18px; }
+.contact-header h1 {
+  font-size: 1.9rem;
+  margin-bottom: 6px;
+  color: var(--text);
+  font-weight: 900;
+}
+.contact-sub { color: var(--muted); margin-bottom: 18px; }
 
 /* grid: cards two columns */
 .contact-cards-grid {
@@ -623,7 +813,9 @@ body.light {
   grid-template-columns: 1fr 1fr;
   gap: 18px;
   max-width: 960px;
+  width: 100%;                 /* make sure it never exceeds viewport */
   margin: 0 auto;
+  box-sizing: border-box;      /* include padding in width */
 }
 
 /* each contact card */
@@ -640,7 +832,7 @@ body.light {
 
 /* light-theme overrides for visible borders & backgrounds */
 body.light .contact-card {
-  background: #fff;                     /* white card body in light mode */
+  background: #fff;                      /* white card body in light mode */
   border: 1px solid rgba(20,20,20,0.10); /* stronger visible border in light */
 }
 
@@ -676,15 +868,156 @@ body.light .contact-card-left {
 .contact-icon { color: var(--muted); display:inline-flex; }
 
 /* right content */
-.contact-card-title { font-size: 0.92rem; color: var(--muted); margin-bottom: 6px; }
-.contact-card-value { font-weight: 600; color: var(--text); text-decoration:none; display:block; }
+.contact-card-title {
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.contact-card-value {
+  font-weight: 600;
+  color: var(--text);
+  text-decoration:none;
+  display:block;
+  word-break: break-word;      /* long email / URL won’t overflow mobile */
+}
 
 /* layout tweak for location-only cards (span full width) */
 .contact-card.full {
   grid-column: 1 / -1;
 }
 
-/* responsive */
+/* ================= RESPONSIVE ================= */
+
+/* tablets & small laptops */
 @media (max-width: 880px) {
-  .contact-cards-grid { grid-template-columns: 1fr; padding: 0 12px; }
+  .contact-cards-page {
+    padding-top: 56px;
+    padding-bottom: 70px;
+  }
+
+  .contact-cards-grid {
+    grid-template-columns: 1fr;
+    padding: 0 12px;
+    max-width: 100%;           /* use full mobile width */
+  }
+}
+
+/* smaller phones */
+@media (max-width: 600px) {
+  .contact-cards-page {
+    padding-top: 52px;
+    padding-bottom: 60px;
+  }
+
+  .contact-card {
+    padding: 14px;
+    gap: 12px;
+  }
+
+  .contact-card-left {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+  }
+
+  .contact-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .contact-sub {
+    font-size: 0.95rem;
+  }
+
+  .contact-card-title {
+    font-size: 0.86rem;
+  }
+
+  .contact-card-value {
+    font-size: 0.95rem;
+  }
+}
+
+/* very small phones */
+@media (max-width: 400px) {
+  .contact-cards-grid {
+    padding: 0 8px;
+  }
+
+  .contact-card {
+    padding: 12px;
+  }
+}
+
+
+
+
+
+
+
+
+/* ---------- MOBILE: 2 ROW NAV (NO JSX CHANGES) ---------- */
+@media (max-width: 900px) {
+
+  /* make nav-links vertical container */
+  .nav-links {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    row-gap: 6px !important;
+    column-gap: 10px !important;
+    justify-content: center !important;
+    width: 100%;
+  }
+
+  /* ---------------- ROW 1 ----------------
+     First 3 items stay on top row
+  ------------------------------------------------*/
+  .nav-links a:nth-child(1),
+  .nav-links a:nth-child(2),
+  .nav-links a:nth-child(3) {
+    order: 1;
+    flex: 1 1 auto;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* ---------------- ROW 2 ----------------
+     Contact (4), Resume (5), Theme Toggle (6)
+  ------------------------------------------------*/
+  .nav-links a:nth-child(4),
+  .nav-links a:nth-child(5),
+  .nav-links button.theme-toggle {
+    order: 2;
+    flex: 1 1 auto;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* make every button look compact */
+  .nav-links a,
+  .nav-links button.theme-toggle {
+    padding: 8px 10px !important;
+    border-radius: 8px;
+    white-space: nowrap;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ensure theme button appears as last element */
+  .nav-links button.theme-toggle {
+    order: 3;
+  }
+
+  /* small phones adjustments */
+  @media (max-width: 420px) {
+    .nav-links {
+      row-gap: 4px;
+      column-gap: 6px;
+    }
+    .nav-links a,
+    .nav-links button.theme-toggle {
+      padding: 7px 8px !important;
+      font-size: 0.95rem;
+    }
+  }
 }

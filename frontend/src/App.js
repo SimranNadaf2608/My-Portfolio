@@ -7,6 +7,7 @@ import Projects from './pages/Projects';
 import About from './pages/About';
 import ContactPage from './pages/ContactPage';
 import Footer from "./pages/Footer";
+import ScrollToTop from './components/ScrollToTop';
 
 
 function App(){
@@ -14,6 +15,7 @@ function App(){
     <BrowserRouter>
       <Navbar />
       <div style={{padding:16}}>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
@@ -21,7 +23,9 @@ function App(){
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/FOOTER" element={<footer />} />
         </Routes>
+        
               <Footer />
+
 
         
       </div>

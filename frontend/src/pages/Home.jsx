@@ -51,8 +51,7 @@ export default function Home() {
           </div>
 
           <p className="hero-desc">
-            I build interactive web applications and solve challenging problems using Java,
-            React, and strong data-structure skills. I focus on clean, reliable and user-friendly software.
+           Driven CSE Student | Skilled in cloud technologies, DevOps, Java, DSA, and databases, with a focus on building secure, reliable, and scalable cloud-native solutions.
           </p>
 
           <div className="cta-row">
@@ -75,12 +74,12 @@ export default function Home() {
             </div>
 
             <div className="highlight">
-              <strong>300+</strong>
-              DSA Problems
+              <strong>100+</strong>
+              CodeChef Problems
             </div>
 
             <div className="highlight">
-              <strong>Java & Web </strong>
+              <strong>Java & AWS </strong>
               Certified
             </div>
           </div>
@@ -88,7 +87,7 @@ export default function Home() {
           <div className="quick-contacts">
             <a className="icon-btn" href="https://github.com/SimranNadaf26" target="_blank">GitHub</a>
             <a className="icon-btn" href="https://www.linkedin.com/in/simrannadaf2608" target="_blank">LinkedIn</a>
-            <a className="icon-btn" href="mailto:simrannadaf2608@gmail.com">Email</a>
+            <a className="icon-btn" href="https://www.codechef.com/users/simrannadaf26" target="_blank">CodeChef</a>
             <a className="icon-btn" href="/resume.pdf" target="_blank">Resume</a>
           </div>
 

@@ -25,18 +25,18 @@ export default function About() {
             </p>
 
             <p>
-              I enjoy solving problems, creating clean UI/UX, and writing readable, efficient code. My journey
+              I enjoy solving problems and writing readable, efficient code. My journey
               started with curiosity about how websites and apps work, and today I actively build projects,
               practice DSA, and continuously improve through consistent learning.
             </p>
 
             <p>
               I believe in growth through practice, patience, and persistence. Whether it’s front-end development,
-              Java programming, or exploring new tools, I love turning ideas into real, working applications.
+              Java programming, Software Development or exploring new tools, I love turning ideas into real, working applications.
             </p>
 
             <p>
-              My goal is to become a strong full-stack developer and contribute to impactful products that help people.
+              My goal is to become a strong Software Developer and contribute to impactful products that help people.
             </p>
           </div>
         </section>
@@ -48,10 +48,7 @@ export default function About() {
             <div className="profile-info">
               <h4>Simran Nadaf</h4>
               <p className="muted">Java & React Developer</p>
-              <div className="profile-tags">
-                <span className="small-tag">Open to internships</span>
-                <span className="small-tag">Building portfolio</span>
-              </div>
+              
             </div>
           </div>
 
@@ -59,7 +56,7 @@ export default function About() {
             <h4>Quick snapshot</h4>
             <div className="snapshot-row">
               <div className="snapshot-key">Focus</div>
-              <div className="snapshot-val">Full-stack development</div>
+              <div className="snapshot-val">Software development</div>
             </div>
 
             <div className="snapshot-row">
@@ -94,17 +91,24 @@ export default function About() {
               <h4>Libraries & Frameworks</h4>
               <div className="skill-row">
                 <span className="skill-chip">React</span>
-                <span className="skill-chip">React Router</span>
-                <span className="skill-chip">MUI</span>
-                <span className="skill-chip">Axios</span>
+                <span className="skill-chip">Node</span>
+                <span className="skill-chip">Express</span>
+                <span className="skill-chip">Tailwind CSS</span>
+                <span className="skill-chip">JDBC</span>
+
               </div>
             </div>
 
             <div className="skill-box universal-card-inner">
-              <h4>Databases</h4>
+              <h4>CS Core Concepts</h4>
               <div className="skill-row">
-                <span className="skill-chip">MySQL</span>
-                <span className="skill-chip">MongoDB</span>
+                <span className="skill-chip">Data Structures</span>
+                <span className="skill-chip">Algorithms</span>
+                <span className="skill-chip">OOP</span>
+                <span className="skill-chip">Operating System</span>
+                <span className="skill-chip">Networking</span>
+                <span className="skill-chip">DBMS</span>
+
               </div>
             </div>
 
@@ -114,7 +118,10 @@ export default function About() {
                 <span className="skill-chip">Git & GitHub</span>
                 <span className="skill-chip">VS Code</span>
                 <span className="skill-chip">Postman</span>
-                <span className="skill-chip">OOP Concepts</span>
+                <span className="skill-chip">REST APIs</span>
+                <span className="skill-chip">Jira</span>
+                <span className="skill-chip">Linux</span>
+                <span className="skill-chip">MySQL</span>
               </div>
             </div>
           </div>
@@ -128,22 +135,22 @@ export default function About() {
 
             <div className="cert-grid">
               <div className="cert-card universal-card-inner">
-                <strong>Java Programming — Udemy / Coursera</strong>
-                <p className="cert-desc">Core Java concepts, OOP, and hands-on practice.</p>
+                <strong>AWS — AWS Academy</strong>
+                <p className="cert-desc">Deploying and Managing cloud resources. </p>
               </div>
 
               <div className="cert-card universal-card-inner">
-                <strong>Web Development — HTML, CSS, JavaScript</strong>
-                <p className="cert-desc">Responsive layouts, basic interactivity, and UI fundamentals.</p>
+                <strong>Databases</strong>
+                <p className="cert-desc">Concepts of SQL, normaliza on, indexing, transac ons, and database design.</p>
               </div>
 
               <div className="cert-card universal-card-inner">
-                <strong>React Frontend Course — YouTube / Udemy</strong>
+                <strong>Secure coding in Java and SpringBoot</strong>
                 <p className="cert-desc">Components, hooks, state management, routing basics.</p>
               </div>
 
               <div className="cert-card universal-card-inner">
-                <strong>Git & GitHub Essentials</strong>
+                <strong>Postman API</strong>
                 <p className="cert-desc">Version control, branching, and collaboration workflows.</p>
               </div>
             </div>
@@ -157,7 +164,7 @@ export default function About() {
             <p className="section-sub">Where I’m heading and how I’m growing next.</p>
 
             <p>
-              I aim to become a skilled full-stack developer and work on real-world applications that solve meaningful
+              I aim to become a skilled Software developer and work on real-world applications that solve meaningful
               problems. I’m focused on strengthening my Java, React, and DSA skills, building high-quality projects, and
               preparing for exciting internship opportunities.
             </p>
