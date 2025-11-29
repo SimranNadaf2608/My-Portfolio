@@ -40,7 +40,7 @@ const otherProjects = [
     id: "Portal",
     title: "Complaint Management Portal",
     description: "It allows students to submit, view, and delete complaints through a user-friendly web interface. ",
-    tech: "S, Java, pring Boot, MySQL",
+    tech: " Java, pring Boot, MySQL",
     github: "https://github.com/SimranNadaf2608/Complaint-Management-Portal-.git"
   },
   
