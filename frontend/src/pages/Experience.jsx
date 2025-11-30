@@ -60,7 +60,7 @@ export default function Experience() {
                     {/* INNER CARD 1 – BE */}
                     <div className="edu-inner-card">
                         <div className="edu-inner-content">
-                        <h3 className="edu-inner-title">Bachelor of Technology (CSE)</h3>
+                        <h3 className="edu-inner-title">Bachelor of Engineering and Technology (CSE)</h3>
                         <p className="edu-inner-date">2022 – 2026</p>
                         <p className="edu-inner-college">Srinivas University, Karnataka</p>
 
