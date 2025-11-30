@@ -8,7 +8,6 @@ import About from './pages/About';
 import ContactPage from './pages/ContactPage';
 import Footer from "./pages/Footer";
 import ScrollToTop from './components/ScrollToTop';
-import Experience from './pages/Experience';
 
 
 function App(){
@@ -22,7 +21,6 @@ function App(){
           <Route path="/projects" element={<Projects />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/experience" element={<Experience />} />
           <Route path="/FOOTER" element={<footer />} />
         </Routes>
         
