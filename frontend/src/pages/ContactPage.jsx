@@ -49,7 +49,7 @@ export default function Contact() {
     { id: 1, icon: <IconEmail />, title: "Email", value: "simrannadaf2608@gmail.com", href: "mailto:simrannadaf2608@gmail.com" },
     { id: 2, icon: <IconLinkedIn />, title: "LinkedIn", value: "linkedin.com/in/simrannadaf2608", href: "https://www.linkedin.com/in/simrannadaf2608" },
     { id: 3, icon: <IconGitHub />, title: "GitHub", value: "github.com/SimranNadaf2608", href: "https://github.com/SimranNadaf2608" },
-    { id: 4, icon: <IconResume />, title: "Resume", value: "Link to my resume", href: "/resume.pdf" },
+    { id: 4, icon: <IconResume />, title: "Resume", value: "Link to my resume", href: "/Simran_Resume.pdf" },
     { id: 5, icon: <IconLocation />, title: "Location", value: "Karnataka, India" }
   ];
 
