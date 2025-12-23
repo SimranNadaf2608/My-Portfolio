@@ -17,7 +17,8 @@ const featuredProjects = [
       "Results dashboard"
     ],
     github: "https://github.com/SimranNadaf2608/GeoPovertyAnalyzer.git",
-    vercel: "https://recipe-kohl-zeta.vercel.app/"
+    vercel: "https://recipe-kohl-zeta.vercel.app/",
+    "Actively Developing": true
   }
 ];
 

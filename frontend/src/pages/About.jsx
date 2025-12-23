@@ -106,7 +106,7 @@ export default function About() {
                 <span className="skill-chip">Algorithms</span>
                 <span className="skill-chip">OOP</span>
                 <span className="skill-chip">Operating System</span>
-                <span className="skill-chip">Networking</span>
+                <span className="skill-chip">COmputer Networks</span>
                 <span className="skill-chip">DBMS</span>
 
               </div>
@@ -149,10 +149,6 @@ export default function About() {
                 <p className="cert-desc">Components, hooks, state management, routing basics.</p>
               </div>
 
-              <div className="cert-card universal-card-inner">
-                <strong>Postman API</strong>
-                <p className="cert-desc">Version control, branching, and collaboration workflows.</p>
-              </div>
             </div>
           </div>
         </div>

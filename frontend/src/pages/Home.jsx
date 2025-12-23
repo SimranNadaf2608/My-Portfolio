@@ -87,7 +87,7 @@ export default function Home() {
           <div className="quick-contacts">
             <a className="icon-btn" href="https://github.com/SimranNadaf2608" target="_blank">GitHub</a>
             <a className="icon-btn" href="https://www.linkedin.com/in/simrannadaf2608" target="_blank">LinkedIn</a>
-            <a className="icon-btn" href="https://github.com/SimranNadaf2608" target="_blank">CodeChef</a>
+            <a className="icon-btn" href="https://www.codechef.com/users/simrannadaf26" target="_blank">CodeChef</a>
             <a className="icon-btn" href="/resume.pdf" target="_blank">Resume</a>
           </div>
 
