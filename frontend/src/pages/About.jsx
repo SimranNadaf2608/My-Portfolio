@@ -94,8 +94,6 @@ export default function About() {
                 <span className="skill-chip">Node</span>
                 <span className="skill-chip">Express</span>
                 <span className="skill-chip">Tailwind CSS</span>
-                <span className="skill-chip">JDBC</span>
-
               </div>
             </div>
 

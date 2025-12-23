@@ -69,7 +69,7 @@ export default function Home() {
 
           <div className="highlights">
             <div className="highlight">
-              <strong>10+</strong>
+              <strong>3+</strong>
               Projects Built
             </div>
 
