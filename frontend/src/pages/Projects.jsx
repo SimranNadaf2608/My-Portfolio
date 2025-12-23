@@ -16,8 +16,6 @@ const featuredProjects = [
       "future predictions using ML",
       "Results dashboard"
     ],
-    github: "https://github.com/SimranNadaf2608/GeoPovertyAnalyzer.git",
-    vercel: "https://recipe-kohl-zeta.vercel.app/",
     Status :"Actively Developing"
   }
 ];
