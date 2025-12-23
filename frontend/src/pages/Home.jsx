@@ -51,7 +51,7 @@ export default function Home() {
           </div>
 
           <p className="hero-desc">
-           Driven CSE Student | Skilled in cloud technologies, DevOps, Java, DSA, and databases, with a focus on building secure, reliable, and scalable cloud-native solutions.
+           Driven CSE Student | Skilled in Web technologies, Java, DSA, and databases, with a focus on building secure, reliable, and scalable cloud-native solutions.
           </p>
 
           <div className="cta-row">
