@@ -27,7 +27,7 @@ export default function Navbar() {
         <Link to="/contact">Contact</Link>
 
         {/* Make sure resume.pdf exists in frontend/public */}
-        <a href="/resume.pdf" className="resume-btn" target="_blank" rel="noreferrer">
+        <a href="/Simran_Resume.pdf" className="resume-btn" target="_blank" rel="noreferrer">
           Resume
         </a>
 
